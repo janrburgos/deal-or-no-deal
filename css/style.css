@@ -1,0 +1,439 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Saira", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  background: radial-gradient(ellipse, #666666, #222222);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "money"
+    "briefcase";
+}
+
+.left {
+  display: grid;
+  grid-template-rows: 1fr 3fr 0.5fr;
+  grid-area: briefcase;
+}
+
+.info-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  font-size: 1.5rem;
+  text-align: center;
+  color: lightgoldenrodyellow;
+}
+
+.info > span {
+  display: inline-block;
+  width: 60px;
+}
+
+.briefcase-group {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  margin: 0 10px;
+}
+
+.briefcase {
+  background: hsl(0, 0%, 75%);
+  background: linear-gradient(
+      to right,
+      rgb(128, 128, 128),
+      rgba(128, 128, 128, 0) 5%
+    ),
+    linear-gradient(to left, rgb(128, 128, 128), rgba(128, 128, 128, 0) 5%),
+    linear-gradient(to bottom, rgb(128, 128, 128), rgba(128, 128, 128, 0) 3%),
+    linear-gradient(to top, rgb(128, 128, 128), rgba(128, 128, 128, 0) 7%),
+    linear-gradient(
+      to bottom,
+      hsl(0, 0%, 75%),
+      hsl(0, 0%, 75%) 10%,
+      hsl(0, 0%, 50%) 11%,
+      hsl(0, 0%, 75%) 11%,
+      hsl(0, 0%, 75%) 15%,
+      hsl(0, 0%, 50%) 15%,
+      hsl(0, 0%, 75%) 18%,
+      hsl(0, 0%, 50%) 19%,
+      hsl(0, 0%, 75%) 19%,
+      hsl(0, 0%, 75%) 23%,
+      hsl(0, 0%, 50%) 23%,
+      hsl(0, 0%, 75%) 26%,
+      hsl(0, 0%, 75%) 76%,
+      hsl(0, 0%, 50%) 77%,
+      hsl(0, 0%, 75%) 77%,
+      hsl(0, 0%, 75%) 81%,
+      hsl(0, 0%, 50%) 81%,
+      hsl(0, 0%, 75%) 84%,
+      hsl(0, 0%, 50%) 85%,
+      hsl(0, 0%, 75%) 85%,
+      hsl(0, 0%, 75%) 89%,
+      hsl(0, 0%, 50%) 89%,
+      hsl(0, 0%, 75%) 92%
+    );
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.orange-briefcase {
+  background: linear-gradient(
+      to right,
+      hsl(33, 100%, 30%),
+      rgba(128, 128, 128, 0) 5%
+    ),
+    linear-gradient(to left, hsl(33, 100%, 30%), rgba(255, 140, 0, 0) 5%),
+    linear-gradient(to bottom, hsl(33, 100%, 30%), rgba(255, 140, 0, 0) 3%),
+    linear-gradient(to top, hsl(33, 100%, 30%), rgba(255, 140, 0, 0) 7%),
+    linear-gradient(
+      to bottom,
+      orange,
+      orange 10%,
+      hsl(33, 100%, 30%) 11%,
+      orange 11%,
+      orange 15%,
+      hsl(33, 100%, 30%) 15%,
+      orange 18%,
+      hsl(33, 100%, 30%) 19%,
+      orange 19%,
+      orange 23%,
+      hsl(33, 100%, 30%) 23%,
+      orange 26%,
+      orange 76%,
+      hsl(33, 100%, 30%) 77%,
+      orange 77%,
+      orange 81%,
+      hsl(33, 100%, 30%) 81%,
+      orange 84%,
+      hsl(33, 100%, 30%) 85%,
+      orange 85%,
+      orange 89%,
+      hsl(33, 100%, 30%) 89%,
+      orange 92%
+    );
+}
+
+.briefcase:hover {
+  cursor: pointer;
+}
+
+.right {
+  display: grid;
+  grid-area: money;
+}
+
+.prize-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.prize-group > div {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 5px;
+}
+
+.prize {
+  background: radial-gradient(
+      circle at left,
+      darkgoldenrod -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    radial-gradient(
+      circle at right,
+      darkgoldenrod -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    linear-gradient(
+      to bottom,
+      darkgoldenrod -10%,
+      gold 15%,
+      gold 45%,
+      darkgoldenrod,
+      gold 130%
+    );
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: filter 0.3s ease;
+}
+
+.banker-offer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-border {
+  background: linear-gradient(
+    135deg,
+    gold,
+    darkgoldenrod,
+    gold,
+    darkgoldenrod,
+    gold,
+    darkgoldenrod
+  );
+  width: 95%;
+  height: 80%;
+  max-width: 1000px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.box {
+  background: #333;
+  background: radial-gradient(ellipse, #444, #222);
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.previous-offer,
+.dond-question,
+.deal,
+.no-deal {
+  color: #ddd;
+}
+
+.offer-text,
+.current-offer {
+  font-size: 2.5rem;
+}
+
+.offer-text {
+  margin-top: auto;
+  background: -webkit-radial-gradient(ellipse, gold, darkgoldenrod);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px darkgoldenrod;
+}
+
+.current-offer {
+  margin-bottom: auto;
+  background: radial-gradient(ellipse, gold, darkgoldenrod);
+  padding: 0 30px;
+  border-radius: 5px;
+}
+
+.dond-question {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dond-question > span {
+  font-size: 1.2rem;
+  position: relative;
+  top: 5px;
+}
+
+.deal,
+.no-deal {
+  font-size: 1.5rem;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-text-stroke: 1px #111111;
+}
+
+.deal:focus,
+.no-deal:focus {
+  outline: none;
+}
+
+.deal:active,
+.no-deal:active {
+  transform: scale(0.95);
+  outline: none;
+}
+
+.deal {
+  background: radial-gradient(
+      circle at left,
+      hsl(120, 100%, 8%) -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    radial-gradient(
+      circle at right,
+      hsl(120, 100%, 8%) -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(120, 100%, 8%) -10%,
+      green 25%,
+      green 40%,
+      hsl(120, 100%, 8%),
+      green 150%
+    );
+}
+
+.no-deal {
+  background: radial-gradient(
+      circle at left,
+      hsl(0, 100%, 15%) -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    radial-gradient(
+      circle at right,
+      hsl(0, 100%, 15%) -5%,
+      rgba(255, 215, 0, 0) 10%
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(0, 100%, 15%) -5%,
+      red 30%,
+      red 40%,
+      hsl(0, 100%, 15%),
+      red 150%
+    );
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    grid-template-areas: "briefcase briefcase money";
+  }
+
+  .info {
+    font-size: 1.5rem;
+  }
+
+  .briefcase {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .briefcase-group {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 10px;
+  }
+
+  .prize-group {
+    grid-template-columns: 1fr;
+    margin: 20px 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .info {
+    font-size: 2rem;
+  }
+
+  .info > span {
+    width: 80px;
+  }
+
+  .briefcase {
+    font-size: 2rem;
+  }
+
+  .offer-text,
+  .current-offer {
+    font-size: 4rem;
+  }
+
+  .current-offer {
+    border-radius: 15px;
+  }
+
+  .dond-question {
+    margin-bottom: 30px;
+  }
+
+  .dond-question > span {
+    top: 18px;
+  }
+
+  .deal,
+  .no-deal {
+    font-size: 2.5rem;
+    width: 250px;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .info {
+    font-size: 2.5rem;
+  }
+
+  .info > span {
+    width: 95px;
+  }
+
+  .briefcase-group {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .prize {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .info {
+    font-size: 3rem;
+  }
+
+  .info > span {
+    width: 115px;
+  }
+
+  .box-border {
+    height: 750px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .briefcase-group {
+    grid-template-columns: repeat(6, 1fr);
+    margin: 0 20px;
+  }
+
+  .prize-group {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 50px 10px;
+    gap: 10px;
+  }
+}
