@@ -1,30 +1,8 @@
 ////////// VARIABLE DECLARATION //////////
 
 const prizeList = [
-  1,
-  5,
-  10,
-  25,
-  50,
-  75,
-  100,
-  200,
-  300,
-  400,
-  500,
-  750,
-  1000,
-  5000,
-  10000,
-  25000,
-  50000,
-  100000,
-  200000,
-  300000,
-  400000,
-  500000,
-  1000000,
-  2000000,
+  1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000,
+  50000, 100000, 200000, 300000, 400000, 500000, 1000000, 2000000,
 ];
 const prizeDisplay = document.querySelectorAll(".prize");
 const briefcases = document.querySelectorAll(".briefcase");
@@ -143,11 +121,12 @@ const gameOverWindow = () => {
   dondQuestionDiv.append(playAgainButton);
   document.querySelector("body").append(gameOverDiv);
   playAgainButton.addEventListener("click", () => {
-    window.location.href = "deal-or-no-deal.html";
+    window.location.href = "index.html";
   });
   // display winnings
   prizeListAve();
-  chosenBriefcaseAmountSpan.textContent = contestantOwnBriefcasePrize.toLocaleString();
+  chosenBriefcaseAmountSpan.textContent =
+    contestantOwnBriefcasePrize.toLocaleString();
   currentOfferDiv.textContent = bankerOfferAmount.toLocaleString();
 };
 
